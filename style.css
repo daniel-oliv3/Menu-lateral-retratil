@@ -1,0 +1,67 @@
+* { /*resetando os valores de*/
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: #f9f9f9; /*cor do fundo da pagina, cor: branco "meio sujo"*/
+}
+
+#check{ /* # para id */
+	display: none;
+}
+
+#icone{ /*para label icone*/
+	cursor: pointer;
+	padding: 15px;
+	position: absolute;
+	z-index: 1;
+}
+
+.barra{ /* . "ponto" para classe */
+	background-color: #333; /* cinza*/
+	height: 100%;
+	width: 300px;
+	position: absolute;
+	transition: all .2s linear; /* e qualquer transição para essa div, tera a duração de 0.2 segundos, curva linear */
+	left: -300px; /**/
+}
+
+nav{
+	width: 100%;
+	position: absolute;
+	top: 60px;
+}
+
+nav a{
+	text-decoration: none; /*tirou o sublinhado no menu "links"*/
+}
+
+.link{ /*classe link */
+	background-color: #494950;
+	padding: 20px;
+	font-family: arial;
+	font-size: 12pt;
+	transition: all .2s linear;
+	color: #f4f4f9;
+	border-bottom: 2px solid #222;
+	opacity: 0;
+	margin-top: 200px;
+
+}
+
+.link:hover{
+	background-color: #050542;
+
+}
+
+
+#check:checked ~ .barra { 
+	transform: translateX(300px); /*vai sofrer uma trasformação no eixo x, de 300 px*/
+}
+
+#check:checked ~ .barra nav a .link{ 
+	opacity: 1;
+	margin-top: 0; 
+	transition-delay: .2s;
+}
